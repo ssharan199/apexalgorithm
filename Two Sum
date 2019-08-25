@@ -1,0 +1,25 @@
+Q.Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+Example:
+
+Given nums = [2, 7, 11, 15], target = 9,
+
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].
+
+Solution
+
+Integer target = 9;
+//You can't index a Set like you can a List/Array
+    List<Integer> numbersList = new List<Integer>{2,7,11,15};
+for (Integer i = 0; i < numbersList.size(); i++) {
+    for (Integer j = 1; j < numbersList.size(); j++) {
+        if(numbersList[i] + numbersList[j] == target)
+        {
+            system.debug(numbersList[i]+',' +numbersList[j]);
+        }
+    }
+}
+
