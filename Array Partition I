@@ -1,0 +1,33 @@
+Q. Given an array of 2n integers, your task is to group these integers into n pairs of integer, say (a1, b1), (a2, b2), ..., (an, bn)
+which makes sum of min(ai, bi) for all i from 1 to n as large as possible.
+
+Example 1:
+Input: [1,4,3,2]
+
+Output: 4
+Explanation: n is 2, and the maximum sum of pairs is 4 = min(1, 2) + min(3, 4).
+Note:
+n is a positive integer, which is in the range of [1, 10000].
+All the integers in the array will be in the range of [-10000, 10000].
+
+Explaination
+You need each pair to include numbers as close as possible together, so that when you sacrifice each big number in the pair, 
+the little number that survives is as large as possible while still being small enough to be shielded by the big number. 
+The obvious way to pair up numbers like that is to sort them, and for the problem you've describe the language library sorting algorithm
+is probably the best choice.
+
+For example, lets consider above the case that is 1 2 3 4
+ *    
+ *    3 is the closest one to 4.
+ *    1 is the closest one to 2.
+ *    
+ *    1 + 3 = 4 is largest value that is among the sum of the min pairs.
+ 
+Solution
+List<integer> l1 = new List<integer>{1,4,3,2};
+l1.sort();
+ integer sum = 0;
+for( integer i = 0; i < l1.size(); i =i+2 ){
+            sum += l1[i];
+    }
+system.debug(sum);
