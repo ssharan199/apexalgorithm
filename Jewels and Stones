@@ -15,9 +15,12 @@ String J ='aA';
 String S ='aAAbbbb';
 Integer count = 0;
 
- for(Integer i=0; i < J.length(); i++)
-     for(Integer k=0; k < S.length(); k++)
-    {    if(J.charAt(i) == S.charAt(k))
-            count++;
+Set<Integer> jewelSet = new Set<Integer>(J.getChars());
+
+for(Integer stone : S.getChars()) {
+    if(jewelSet.contains(stone)) {
+        count++;
     }
-     system.debug(count);
+}
+
+System.debug(count);
